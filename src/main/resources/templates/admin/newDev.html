@@ -8,18 +8,16 @@
 <body>
 <section layout:fragment="contenu">
     <h1>Nouveau Ticket :</h1>
-    <form th:action="@{/client/add}" th:object="${admin}" method="post">
+    <form th:action="@{/admin/add}" th:object="${admin}" method="post">
         <div class="container pt-5">
-            <label>Description:</label>
-            <input  type="text" name="description"  field="*{description}" /><br>
-            <label>Urgence:</label>
-            <input  type="text" name="urgence"  field="*{urgence}" /><br>
-            <label>Envirenement Executer:</label>
-            <input  type="text" name="envExecu"  field="*{envExecu}" /><br>
-            <label>Logiciel:</label>
-            <input  type="text" name="logiciel" field="*{logiciel}" /><br>
-            <label>Statut:</label>
-            <input  type="text" name="statut" field="*{statut}" /><br>
+            <label>Prenom:</label>
+            <input  type="text" name="prenom"  field="*{prenom}" /><br>
+            <label>Nom:</label>
+            <input  type="text" name="nom"  field="*{nom}" /><br>
+            <label>Username:</label>
+            <input  type="text" name="user_name"  field="*{user_name}" /><br>
+            <label>Password:</label>
+            <input  type="text" name="password" field="*{password}" /><br>
             <button class="btn btn-primary" type="submit">Ajouter</button>
         </div>
     </form>

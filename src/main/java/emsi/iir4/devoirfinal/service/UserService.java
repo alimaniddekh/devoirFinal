@@ -23,7 +23,7 @@ public class UserService implements UserDetailsService {
 
 	@Autowired
 	UserRepository userRepository;
-	
+
 	@Autowired
 	RoleRepository roleRepository;
 	
@@ -38,7 +38,7 @@ public class UserService implements UserDetailsService {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		userRepository.save(user);
 	}
-	
+
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user= userRepository.findByUserName(username);
@@ -46,9 +46,9 @@ public class UserService implements UserDetailsService {
 			throw new UsernameNotFoundException("Nom d'utilisateur ou mot de passe erroné");
 		for (Role r: user.getRoles())
 			System.out.println("Role: "+r.getNom());
-		return new org.springframework.security.core.userdetails.User(user.getuserName(),user.getPassword() , user.getRoles().stream()
+		return new org.springframework.security.core.userdetails.User(user.getUserName(),user.getPassword() , user.getRoles().stream()
 				.map(r ->new SimpleGrantedAuthority("Role_"+r.getNom())).collect(Collectors.toList()));
 	}
 
-	
+
 }

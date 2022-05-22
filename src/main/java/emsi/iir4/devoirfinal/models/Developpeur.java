@@ -18,9 +18,5 @@ public class Developpeur extends User {
 	public void setTicks(List<Ticket> ticks) {
 		this.ticks = ticks;
 	}
-	
-	
-	
-	
 
 }

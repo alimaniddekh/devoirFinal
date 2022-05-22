@@ -38,7 +38,13 @@ public class AdminService {
 			}
 		}		
 	}
-	
+
+	public void addDev(Developpeur developpeur){
+		if(developpeur!=null){
+			dr.save(developpeur);
+		}
+	}
+
 	public Ticket getTick(int id) {
 		return tr.findById(id).get();
 	}
